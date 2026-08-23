@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Christopher Gentile — Full-Stack AI Engineer</title>
-    <meta name="description" content="10 production AI apps built by Christopher Gentile. Multi-agent orchestration, RAG, vision AI, voice assistants, and more." />
+    <meta name="description" content="10 AI applications built by Christopher Gentile. Multi-agent orchestration, RAG, vision AI, voice assistants, and more." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2306090f'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%2310b981' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%2310b981'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -18,15 +19,15 @@
         --border-hover:rgba(255,255,255,.12);
         --text:#e6edf3;
         --dim:#8b949e;
-        --muted:#484f58;
+        --muted:#7d8791;
         --accent:#10b981;
         --accent-dim:rgba(16,185,129,.12);
         --accent2:#14b8a6;
         --accent3:#06b6d4;
       }
-      body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6}
+      body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
       a{color:inherit;text-decoration:none}
-      .ctn{max-width:1100px;margin:0 auto;padding:0 24px}
+      .ctn{width:100%;max-width:1100px;min-width:0;margin:0 auto;padding:0 24px}
 
       header{position:sticky;top:0;z-index:50;background:rgba(6,9,15,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
       header .ctn{display:flex;align-items:center;justify-content:space-between;height:56px}
@@ -35,7 +36,7 @@
       header nav a{color:var(--dim);font-size:14px;font-weight:500;transition:color .2s}
       header nav a:hover{color:#fff}
 
-      .hero{padding:100px 0 60px;position:relative}
+      .hero{padding:100px 0 60px;position:relative;overflow:hidden}
       .hero::before{content:'';position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(16,185,129,.06),transparent 70%);pointer-events:none}
       .hero-inner{max-width:640px}
       .hero-tag{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border-radius:999px;font-size:12px;font-weight:500;font-family:'JetBrains Mono',monospace;background:var(--accent-dim);color:var(--accent);border:1px solid rgba(16,185,129,.2);margin-bottom:24px}
@@ -47,7 +48,7 @@
       .hero p{font-size:16px;color:var(--dim);max-width:520px;line-height:1.7;margin-bottom:32px}
       .hero-links{display:flex;gap:12px;flex-wrap:wrap}
       .hero-links a{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:8px;font-size:13px;font-weight:600;transition:all .2s}
-      .btn-primary{background:var(--accent);color:#fff}
+      .btn-primary{background:var(--accent);color:#06231a}
       .btn-primary:hover{background:#0d9668}
       .btn-secondary{background:var(--raised);color:var(--text);border:1px solid var(--border)}
       .btn-secondary:hover{border-color:var(--border-hover);background:#1c2128}
@@ -60,7 +61,7 @@
       .stitle{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:32px;display:flex;align-items:center;gap:16px}
       .stitle::after{content:'';flex:1;height:1px;background:var(--border)}
 
-      .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+      .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;min-width:0}
       .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;transition:all .25s ease;position:relative;overflow:hidden;display:block}
       .card:hover{border-color:var(--border-hover);transform:translateY(-1px);box-shadow:0 12px 32px rgba(0,0,0,.25)}
       .card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--ac);opacity:0;transition:opacity .25s}
@@ -77,7 +78,7 @@
       .arr{color:var(--muted);font-size:16px;transition:transform .2s,color .2s}
       .card:hover .arr{transform:translateX(3px);color:var(--ac)}
 
-      .tg{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+      .tg{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;min-width:0}
       .ti{padding:14px 18px;background:var(--surface);border:1px solid var(--border);border-radius:8px;font-size:13px;font-weight:500;text-align:center;transition:border-color .2s;color:var(--dim)}
       .ti:hover{border-color:var(--border-hover);color:var(--text)}
 
@@ -87,10 +88,17 @@
       .footer-name{color:var(--dim);margin-bottom:4px}
 
       @media(max-width:640px){
+        header .ctn{padding:0 16px}
+        header nav{gap:14px}
+        header nav a{font-size:12px}
+        .logo{font-size:16px}
         .grid{grid-template-columns:1fr}
         .hero{padding:60px 0 40px}
         .hero-links{flex-direction:column}
         .hero-links a{justify-content:center}
+      }
+      @media(prefers-reduced-motion:reduce){
+        *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
       }
     </style>
   </head>
@@ -110,10 +118,10 @@
       <section class="hero">
         <div class="ctn">
           <div class="hero-inner">
-            <div class="hero-tag"><span class="dot"></span> 10 live apps deployed</div>
+            <div class="hero-tag"><span class="dot"></span> 10 live AI applications</div>
             <h1>Christopher Gentile</h1>
             <div class="name-sub">Full-Stack AI Engineer <span>/ JDGAFX / CGDarkstardev1</span></div>
-            <p>I build production AI systems &mdash; multi-agent orchestration, RAG pipelines, voice assistants, computer vision, and autonomous browser agents. All open source, all deployed, all working.</p>
+            <p>I build AI systems &mdash; multi-agent orchestration, RAG pipelines, voice assistants, computer vision, and browser-task planning. The frontends are deployed; provider-backed flows are clearly bounded by their configured runtime.</p>
             <div class="hero-links">
               <a href="#apps" class="btn-primary">View Projects &darr;</a>
               <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS" class="btn-secondary" target="_blank">Source Code &nearr;</a>
@@ -121,7 +129,7 @@
             <div class="badges">
               <span class="b"><span class="d" style="background:#10b981"></span>React 19</span>
               <span class="b"><span class="d" style="background:#3b82f6"></span>TypeScript 5.7</span>
-              <span class="b"><span class="d" style="background:#14b8a6"></span>Claude API</span>
+              <span class="b"><span class="d" style="background:#14b8a6"></span>OpenRouter Free</span>
               <span class="b"><span class="d" style="background:#06b6d4"></span>Netlify Functions</span>
               <span class="b"><span class="d" style="background:#22c55e"></span>Tailwind v4</span>
             </div>
@@ -131,7 +139,7 @@
 
       <section class="section" id="apps">
         <div class="ctn">
-          <div class="stitle">AI Portfolio &mdash; 10 Production Apps</div>
+          <div class="stitle">AI Portfolio &mdash; 10 AI Applications</div>
           <div class="grid">
             <a href="https://jdgafx-app-01-multi-agent-orchestrator.netlify.app" class="card" style="--ac:#00d4ff" target="_blank">
               <div class="ch"><div class="ci" style="color:#00d4ff">&#9881;</div><span class="cn">01</span></div>
@@ -158,8 +166,8 @@
               <div class="ch"><div class="ci" style="color:#8b5cf6">&#127908;</div><span class="cn">04</span></div>
               <div class="cname">VoxAI</div>
               <div class="csub">Voice AI Assistant</div>
-              <div class="cdesc">Speak or type to chat. Groq Whisper transcribes your voice, Claude generates a response, browser TTS speaks it back. Real-time waveform visualization.</div>
-              <div class="cf"><div class="tags"><span class="tag">Web Audio</span><span class="tag">Groq STT</span><span class="tag">TTS</span></div><span class="arr">&rarr;</span></div>
+              <div class="cdesc">Type or request microphone access. Permitted recordings use Deepgram transcription, then OpenRouter chat and browser TTS; typed chat is the honest fallback.</div>
+              <div class="cf"><div class="tags"><span class="tag">Web Audio</span><span class="tag">Deepgram STT</span><span class="tag">TTS</span></div><span class="arr">&rarr;</span></div>
             </a>
             <a href="https://jdgafx-app-05-ai-data-analyst.netlify.app" class="card" style="--ac:#ef4444" target="_blank">
               <div class="ch"><div class="ci" style="color:#ef4444">&#128200;</div><span class="cn">05</span></div>
@@ -172,7 +180,7 @@
               <div class="ch"><div class="ci" style="color:#3b82f6">&#9878;</div><span class="cn">06</span></div>
               <div class="cname">ModelArena</div>
               <div class="csub">Multi-Model LLM Playground</div>
-              <div class="cdesc">Compare 2-3 Claude models head-to-head. Responses stream simultaneously with latency, token counts, and cost per model.</div>
+              <div class="cdesc">Compare 2-3 OpenRouter Free runs head-to-head. Responses stream simultaneously with actual model, latency, token, cost, truncation, and cancellation state.</div>
               <div class="cf"><div class="tags"><span class="tag">Parallel SSE</span><span class="tag">Benchmarks</span></div><span class="arr">&rarr;</span></div>
             </a>
             <a href="https://jdgafx-app-07-content-pipeline.netlify.app" class="card" style="--ac:#84cc16" target="_blank">
@@ -186,22 +194,22 @@
               <div class="ch"><div class="ci" style="color:#f43f5e">&#128065;</div><span class="cn">08</span></div>
               <div class="cname">VisionLab</div>
               <div class="csub">Multimodal Vision AI</div>
-              <div class="cdesc">Upload images for Claude Vision analysis. Scene description, object detection, text extraction, and visual Q&amp;A with streaming responses.</div>
-              <div class="cf"><div class="tags"><span class="tag">Claude Vision</span><span class="tag">Multimodal</span></div><span class="arr">&rarr;</span></div>
+              <div class="cdesc">Upload images for a vision-capable OpenRouter analysis. Get scene description, object detection, text extraction, and visual Q&amp;A with streaming responses.</div>
+              <div class="cf"><div class="tags"><span class="tag">OpenRouter Vision</span><span class="tag">Multimodal</span></div><span class="arr">&rarr;</span></div>
             </a>
             <a href="https://jdgafx-app-09-ai-saas.netlify.app" class="card" style="--ac:#6366f1" target="_blank">
               <div class="ch"><div class="ci" style="color:#6366f1">&#128202;</div><span class="cn">09</span></div>
               <div class="cname">InsightHub</div>
               <div class="csub">AI-Powered SaaS Dashboard</div>
-              <div class="cdesc">Analytics dashboard with Supabase auth. Interactive charts, API usage tracking, and Claude-generated streaming AI insights.</div>
+              <div class="cdesc">Analytics dashboard with Supabase auth, seeded usage data, interactive charts, and provider-backed streaming AI insights.</div>
               <div class="cf"><div class="tags"><span class="tag">Supabase</span><span class="tag">Recharts</span><span class="tag">Auth</span></div><span class="arr">&rarr;</span></div>
             </a>
             <a href="https://jdgafx-app-10-browser-agent.netlify.app" class="card" style="--ac:#14b8a6" target="_blank">
               <div class="ch"><div class="ci" style="color:#14b8a6">&#129302;</div><span class="cn">10</span></div>
               <div class="cname">BrowseBot</div>
-              <div class="csub">AI Browser Agent Demo</div>
-              <div class="cdesc">Describe a web task and watch AI plan step-by-step browser automation with animated cursor, clicks, typing, and a real-time thought panel.</div>
-              <div class="cf"><div class="tags"><span class="tag">Framer Motion</span><span class="tag">Animation</span></div><span class="arr">&rarr;</span></div>
+              <div class="csub">Bounded Browserbase Executor</div>
+              <div class="cdesc">Describe an approved web task and watch a bounded Browserbase session execute it through Playwright, with observed page evidence, limits, and recoverable failures.</div>
+              <div class="cf"><div class="tags"><span class="tag">Browserbase</span><span class="tag">Playwright</span><span class="tag">SSE</span></div><span class="arr">&rarr;</span></div>
             </a>
           </div>
         </div>
@@ -215,10 +223,12 @@
             <div class="ti">TypeScript 5.7</div>
             <div class="ti">Vite 6</div>
             <div class="ti">Tailwind CSS v4</div>
-            <div class="ti">Claude API</div>
+            <div class="ti">OpenRouter Free</div>
             <div class="ti">Netlify Functions v2</div>
             <div class="ti">Supabase</div>
-            <div class="ti">Groq Whisper</div>
+            <div class="ti">Deepgram STT</div>
+            <div class="ti">Browserbase</div>
+            <div class="ti">Playwright</div>
             <div class="ti">React Flow</div>
             <div class="ti">Recharts</div>
             <div class="ti">Framer Motion</div>
