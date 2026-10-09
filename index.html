@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Christopher Gentile — Full-Stack AI Engineer</title>
-    <meta name="description" content="10 AI applications built by Christopher Gentile. Multi-agent orchestration, RAG, vision AI, voice assistants, and more." />
+    <meta name="description" content="13 AI applications built by Christopher Gentile. Multi-agent orchestration, RAG, vision AI, voice assistants, and more." />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2306090f'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%2310b981' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%2310b981'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -74,6 +74,8 @@
       .cdesc{font-size:13px;color:var(--dim);line-height:1.6;margin-bottom:14px}
       .cf{display:flex;align-items:center;justify-content:space-between}
       .tags{display:flex;gap:5px;flex-wrap:wrap}
+      .srcs{margin-top:24px;font-size:13px;line-height:2;color:var(--muted);overflow-wrap:anywhere}
+      .srcs a{color:var(--muted);text-decoration:underline}
       .tag{font-size:10px;font-weight:500;font-family:'JetBrains Mono',monospace;padding:2px 7px;border-radius:4px;background:var(--raised);color:var(--muted)}
       .arr{color:var(--muted);font-size:16px;transition:transform .2s,color .2s}
       .card:hover .arr{transform:translateX(3px);color:var(--ac)}
@@ -118,10 +120,10 @@
       <section class="hero">
         <div class="ctn">
           <div class="hero-inner">
-            <div class="hero-tag"><span class="dot"></span> 10 live AI applications</div>
+            <div class="hero-tag"><span class="dot"></span> 13 live AI applications</div>
             <h1>Christopher Gentile</h1>
-            <div class="name-sub">Full-Stack AI Engineer <span>/ JDGAFX / CGDarkstardev1</span></div>
-            <p>I build AI systems &mdash; multi-agent orchestration, RAG pipelines, voice assistants, computer vision, and browser-task planning. The frontends are deployed; provider-backed flows are clearly bounded by their configured runtime.</p>
+            <div class="name-sub">Full-Stack AI Engineer <span>/ JDGAFX</span></div>
+            <p>I build AI systems &mdash; multi-agent orchestration, RAG pipelines, voice assistants, computer vision, and LangGraph agents and browser-task planning. Every app is deployed and runs on live public data.</p>
             <div class="hero-links">
               <a href="#apps" class="btn-primary">View Projects &darr;</a>
               <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS" class="btn-secondary" target="_blank">Source Code &nearr;</a>
@@ -129,9 +131,9 @@
             <div class="badges">
               <span class="b"><span class="d" style="background:#10b981"></span>React 19</span>
               <span class="b"><span class="d" style="background:#3b82f6"></span>TypeScript 5.7</span>
-              <span class="b"><span class="d" style="background:#14b8a6"></span>OpenRouter Free</span>
+              <span class="b"><span class="d" style="background:#14b8a6"></span>OpenRouter</span>
               <span class="b"><span class="d" style="background:#06b6d4"></span>Netlify Functions</span>
-              <span class="b"><span class="d" style="background:#22c55e"></span>Tailwind v4</span>
+              <span class="b"><span class="d" style="background:#22c55e"></span>CSS design system</span>
             </div>
           </div>
         </div>
@@ -139,79 +141,101 @@
 
       <section class="section" id="apps">
         <div class="ctn">
-          <div class="stitle">AI Portfolio &mdash; 10 AI Applications</div>
+          <div class="stitle">AI Portfolio &mdash; 13 AI Applications</div>
           <div class="grid">
-            <a href="https://jdgafx-app-01-multi-agent-orchestrator.netlify.app" class="card" style="--ac:#00d4ff" target="_blank">
+            <a href="https://jdgafx-app-01-multi-agent-orchestrator.netlify.app" class="card" style="--ac:#00d4ff" target="_blank" rel="noopener">
               <div class="ch"><div class="ci" style="color:#00d4ff">&#9881;</div><span class="cn">01</span></div>
               <div class="cname">AgentFlow</div>
               <div class="csub">Multi-Agent Research Orchestrator</div>
-              <div class="cdesc">4 AI agents collaborate in sequence via React Flow. Real-time SSE streaming with token counts, timing, and downloadable PDF/DOCX reports.</div>
-              <div class="cf"><div class="tags"><span class="tag">React Flow</span><span class="tag">SSE</span><span class="tag">Multi-Agent</span></div><span class="arr">&rarr;</span></div>
+              <div class="cdesc">Answers a research question from live Wikipedia and Hacker News sources. Four model agents run in a fixed order, then an audit checks every cited sentence of the report against its source and marks it supported, partly supported or not supported.</div>
+              <div class="cf"><div class="tags"><span class="tag">Citation Audit</span><span class="tag">SSE</span><span class="tag">Multi-Agent</span></div><span class="arr">&rarr;</span></div>
             </a>
-            <a href="https://jdgafx-app-02-rag-document-intelligence.netlify.app" class="card" style="--ac:#10b981" target="_blank">
+            <a href="https://jdgafx-app-02-rag-document-intelligence.netlify.app" class="card" style="--ac:#10b981" target="_blank" rel="noopener">
               <div class="ch"><div class="ci" style="color:#10b981">&#128196;</div><span class="cn">02</span></div>
               <div class="cname">DocMind</div>
               <div class="csub">RAG Document Intelligence</div>
-              <div class="cdesc">Upload PDFs and query with natural language. Client-side parsing, chunk-based retrieval, source highlighting, and confidence scoring.</div>
-              <div class="cf"><div class="tags"><span class="tag">PDF.js</span><span class="tag">RAG</span><span class="tag">Chunking</span></div><span class="arr">&rarr;</span></div>
+              <div class="cdesc">Ask questions about a live Wikipedia article, an arXiv paper or your own PDF. The browser ranks passages with BM25, and each citation in the answer opens the passage with the supporting sentence highlighted.</div>
+              <div class="cf"><div class="tags"><span class="tag">BM25</span><span class="tag">RAG</span><span class="tag">Evidence</span></div><span class="arr">&rarr;</span></div>
             </a>
-            <a href="https://jdgafx-app-03-ai-code-review.netlify.app" class="card" style="--ac:#f59e0b" target="_blank">
+            <a href="https://jdgafx-app-03-ai-code-review.netlify.app" class="card" style="--ac:#f59e0b" target="_blank" rel="noopener">
               <div class="ch"><div class="ci" style="color:#f59e0b">&#128269;</div><span class="cn">03</span></div>
               <div class="cname">CodeLens AI</div>
-              <div class="csub">AI Code Review Agent</div>
-              <div class="cdesc">Paste code in 10+ languages. AI returns line-by-line reviews with severity ratings (critical/warning/info) and fix suggestions.</div>
-              <div class="cf"><div class="tags"><span class="tag">Code Analysis</span><span class="tag">Multi-Lang</span></div><span class="arr">&rarr;</span></div>
+              <div class="csub">Verified Code Review</div>
+              <div class="cdesc">Paste code, load a file from public GitHub or paste a pull request link. A second model pass checks each review comment against the code and keeps, moves or drops it, with a reason that quotes the code.</div>
+              <div class="cf"><div class="tags"><span class="tag">Verified Review</span><span class="tag">PR Review</span><span class="tag">GitHub</span></div><span class="arr">&rarr;</span></div>
             </a>
-            <a href="https://jdgafx-app-04-voice-ai-assistant.netlify.app" class="card" style="--ac:#8b5cf6" target="_blank">
+            <a href="https://jdgafx-app-04-voice-ai-assistant.netlify.app" class="card" style="--ac:#8b5cf6" target="_blank" rel="noopener">
               <div class="ch"><div class="ci" style="color:#8b5cf6">&#127908;</div><span class="cn">04</span></div>
               <div class="cname">VoxAI</div>
-              <div class="csub">Voice AI Assistant</div>
-              <div class="cdesc">Type or request microphone access. Permitted recordings use Deepgram transcription, then OpenRouter chat and browser TTS; typed chat is the honest fallback.</div>
-              <div class="cf"><div class="tags"><span class="tag">Web Audio</span><span class="tag">Deepgram STT</span><span class="tag">TTS</span></div><span class="arr">&rarr;</span></div>
+              <div class="csub">Streaming Voice Assistant</div>
+              <div class="cdesc">Ask by voice or by typing. The reply streams in and the browser starts speaking at the first sentence, with the time to first audio measured and shown. Live weather (Open-Meteo) and Wikipedia lookups feed the answers.</div>
+              <div class="cf"><div class="tags"><span class="tag">Streaming</span><span class="tag">Deepgram</span><span class="tag">Time to First Audio</span></div><span class="arr">&rarr;</span></div>
             </a>
-            <a href="https://jdgafx-app-05-ai-data-analyst.netlify.app" class="card" style="--ac:#ef4444" target="_blank">
+            <a href="https://jdgafx-app-05-ai-data-analyst.netlify.app" class="card" style="--ac:#ef4444" target="_blank" rel="noopener">
               <div class="ch"><div class="ci" style="color:#ef4444">&#128200;</div><span class="cn">05</span></div>
               <div class="cname">DataPilot</div>
               <div class="csub">AI Data Analyst</div>
-              <div class="cdesc">Upload CSV or use samples. Ask questions in plain English and get interactive charts. AI generates query plans executed client-side.</div>
-              <div class="cf"><div class="tags"><span class="tag">Recharts</span><span class="tag">CSV</span><span class="tag">NL Query</span></div><span class="arr">&rarr;</span></div>
+              <div class="cdesc">Ask a plain-English question about a live public dataset (USGS, Open-Meteo) or your own CSV, then follow up to refine it. The model writes a query plan and your browser runs it over every row to draw the chart.</div>
+              <div class="cf"><div class="tags"><span class="tag">Query Plans</span><span class="tag">CSV</span><span class="tag">Follow-ups</span></div><span class="arr">&rarr;</span></div>
             </a>
-            <a href="https://jdgafx-app-06-llm-playground.netlify.app" class="card" style="--ac:#3b82f6" target="_blank">
+            <a href="https://jdgafx-app-06-llm-playground.netlify.app" class="card" style="--ac:#3b82f6" target="_blank" rel="noopener">
               <div class="ch"><div class="ci" style="color:#3b82f6">&#9878;</div><span class="cn">06</span></div>
               <div class="cname">ModelArena</div>
-              <div class="csub">Multi-Model LLM Playground</div>
-              <div class="cdesc">Compare 2-3 OpenRouter Free runs head-to-head. Responses stream simultaneously with actual model, latency, token, cost, truncation, and cancellation state.</div>
-              <div class="cf"><div class="tags"><span class="tag">Parallel SSE</span><span class="tag">Benchmarks</span></div><span class="arr">&rarr;</span></div>
+              <div class="csub">Blind Model Arena</div>
+              <div class="cdesc">Send one prompt to three models, read the answers without names, then vote. A shared Elo leaderboard fills only from real votes. Latency, tokens and cost are measured, and an AI judge&rsquo;s note is labelled as opinion.</div>
+              <div class="cf"><div class="tags"><span class="tag">Blind Arena</span><span class="tag">Leaderboard</span><span class="tag">OpenRouter</span></div><span class="arr">&rarr;</span></div>
             </a>
-            <a href="https://jdgafx-app-07-content-pipeline.netlify.app" class="card" style="--ac:#84cc16" target="_blank">
+            <a href="https://jdgafx-app-07-content-pipeline.netlify.app" class="card" style="--ac:#84cc16" target="_blank" rel="noopener">
               <div class="ch"><div class="ci" style="color:#84cc16">&#9999;</div><span class="cn">07</span></div>
               <div class="cname">ContentForge</div>
               <div class="csub">Agentic Content Pipeline</div>
-              <div class="cdesc">5-step AI content pipeline: Research, Outline, Draft, Edit, Polish. Full SSE streaming with step-by-step progress tracking.</div>
-              <div class="cf"><div class="tags"><span class="tag">Pipeline</span><span class="tag">5-Stage</span><span class="tag">SSE</span></div><span class="arr">&rarr;</span></div>
+              <div class="cdesc">Turns a topic into a cited piece, grounded in live Wikipedia and Hacker News sources, through five writing steps. Changes between Draft, Edit and Polish are shown word by word, explained, and checked against the text.</div>
+              <div class="cf"><div class="tags"><span class="tag">Tracked Changes</span><span class="tag">Pipeline</span><span class="tag">SSE</span></div><span class="arr">&rarr;</span></div>
             </a>
-            <a href="https://jdgafx-app-08-vision-ai.netlify.app" class="card" style="--ac:#f43f5e" target="_blank">
+            <a href="https://jdgafx-app-08-vision-ai.netlify.app" class="card" style="--ac:#f43f5e" target="_blank" rel="noopener">
               <div class="ch"><div class="ci" style="color:#f43f5e">&#128065;</div><span class="cn">08</span></div>
               <div class="cname">VisionLab</div>
               <div class="csub">Multimodal Vision AI</div>
-              <div class="cdesc">Upload images for a vision-capable OpenRouter analysis. Get scene description, object detection, text extraction, and visual Q&amp;A with streaming responses.</div>
-              <div class="cf"><div class="tags"><span class="tag">OpenRouter Vision</span><span class="tag">Multimodal</span></div><span class="arr">&rarr;</span></div>
+              <div class="cdesc">Ask about a whole picture, about a box you draw on it, or about two pictures side by side. Pick an image from Wikimedia Commons or upload your own; a region question sends the crop at full resolution.</div>
+              <div class="cf"><div class="tags"><span class="tag">Region Questions</span><span class="tag">Compare</span><span class="tag">Vision</span></div><span class="arr">&rarr;</span></div>
             </a>
-            <a href="https://jdgafx-app-09-ai-saas.netlify.app" class="card" style="--ac:#6366f1" target="_blank">
+            <a href="https://jdgafx-app-09-ai-saas.netlify.app" class="card" style="--ac:#6366f1" target="_blank" rel="noopener">
               <div class="ch"><div class="ci" style="color:#6366f1">&#128202;</div><span class="cn">09</span></div>
               <div class="cname">InsightHub</div>
-              <div class="csub">AI-Powered SaaS Dashboard</div>
-              <div class="cdesc">Analytics dashboard with Supabase auth, seeded usage data, interactive charts, and provider-backed streaming AI insights.</div>
-              <div class="cf"><div class="tags"><span class="tag">Supabase</span><span class="tag">Recharts</span><span class="tag">Auth</span></div><span class="arr">&rarr;</span></div>
+              <div class="csub">npm Download Analytics</div>
+              <div class="cdesc">Loads live npm download counts for one to five packages and marks the unusual days. Each spike is matched to the package&rsquo;s release history, and a streamed explanation has every number, date and version checked against that evidence.</div>
+              <div class="cf"><div class="tags"><span class="tag">npm Registry</span><span class="tag">Spikes</span><span class="tag">Checked Figures</span></div><span class="arr">&rarr;</span></div>
             </a>
-            <a href="https://jdgafx-app-10-browser-agent.netlify.app" class="card" style="--ac:#14b8a6" target="_blank">
+            <a href="https://jdgafx-app-10-browser-agent.netlify.app" class="card" style="--ac:#14b8a6" target="_blank" rel="noopener">
               <div class="ch"><div class="ci" style="color:#14b8a6">&#129302;</div><span class="cn">10</span></div>
               <div class="cname">BrowseBot</div>
-              <div class="csub">Bounded Browserbase Executor</div>
-              <div class="cdesc">Describe an approved web task and watch a bounded Browserbase session execute it through Playwright, with observed page evidence, limits, and recoverable failures.</div>
-              <div class="cf"><div class="tags"><span class="tag">Browserbase</span><span class="tag">Playwright</span><span class="tag">SSE</span></div><span class="arr">&rarr;</span></div>
+              <div class="csub">Browser Agent with Visual Replay</div>
+              <div class="cdesc">Describe a web task and a model plans the steps. They run in headless Chromium on allowlisted public sites, and a filmstrip replays the real page at each step with the URL, title and text the browser read.</div>
+              <div class="cf"><div class="tags"><span class="tag">Headless Chromium</span><span class="tag">Playwright</span><span class="tag">Replay</span></div><span class="arr">&rarr;</span></div>
+            </a>
+            <a href="https://jdgafx-app-11-langgraph-research-agent.netlify.app" class="card" style="--ac:#fbbf24" target="_blank" rel="noopener">
+              <div class="ch"><div class="ci" style="color:#fbbf24">&#8634;</div><span class="cn">11</span></div>
+              <div class="cname">GraphScout</div>
+              <div class="csub">LangGraph Research Agent</div>
+              <div class="cdesc">Answers a factual question from Wikipedia with an agent loop, a draft and a critic, and lists its cited sources. You can rewind to the plan or the critic, edit it, and resume the run from that checkpoint.</div>
+              <div class="cf"><div class="tags"><span class="tag">LangGraph</span><span class="tag">Rewind</span><span class="tag">Checkpoints</span></div><span class="arr">&rarr;</span></div>
+            </a>
+            <a href="https://jdgafx-app-12-langgraph-approval-flow.netlify.app" class="card" style="--ac:#38bdf8" target="_blank" rel="noopener">
+              <div class="ch"><div class="ci" style="color:#38bdf8">&#9989;</div><span class="cn">12</span></div>
+              <div class="cname">GraphGate</div>
+              <div class="csub">GitHub Issue Triage with Approval</div>
+              <div class="cdesc">Triages live public GitHub issues. It looks for earlier duplicates and quotes the evidence, then proposes labels, a priority and a reply or &ldquo;close as duplicate&rdquo;, and waits for a human to approve, edit or reject. Nothing is posted to GitHub.</div>
+              <div class="cf"><div class="tags"><span class="tag">LangGraph</span><span class="tag">Duplicates</span><span class="tag">Human Approval</span></div><span class="arr">&rarr;</span></div>
+            </a>
+            <a href="https://jdgafx-app-13-langgraph-map-reduce.netlify.app" class="card" style="--ac:#f472b6" target="_blank" rel="noopener">
+              <div class="ch"><div class="ci" style="color:#f472b6">&#128506;</div><span class="cn">13</span></div>
+              <div class="cname">GraphSwarm</div>
+              <div class="csub">LangGraph Map-Reduce</div>
+              <div class="cdesc">Splits a Wikipedia article or pasted text into chunks, extracts points from each in parallel and writes a summary that cites its chunks. A coverage map shows which chunks the summary uses, and missed chunks are re-run once.</div>
+              <div class="cf"><div class="tags"><span class="tag">Map-Reduce</span><span class="tag">Coverage Map</span><span class="tag">LangGraph</span></div><span class="arr">&rarr;</span></div>
             </a>
           </div>
+          <p class="srcs">Source code: <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-01-multi-agent-orchestrator" target="_blank" rel="noopener">01 AgentFlow</a> &middot; <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-02-rag-document-intelligence" target="_blank" rel="noopener">02 DocMind</a> &middot; <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-03-ai-code-review" target="_blank" rel="noopener">03 CodeLens AI</a> &middot; <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-04-voice-ai-assistant" target="_blank" rel="noopener">04 VoxAI</a> &middot; <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-05-ai-data-analyst" target="_blank" rel="noopener">05 DataPilot</a> &middot; <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-06-llm-playground" target="_blank" rel="noopener">06 ModelArena</a> &middot; <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-07-content-pipeline" target="_blank" rel="noopener">07 ContentForge</a> &middot; <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-08-vision-ai" target="_blank" rel="noopener">08 VisionLab</a> &middot; <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-09-ai-saas" target="_blank" rel="noopener">09 InsightHub</a> &middot; <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-10-browser-agent" target="_blank" rel="noopener">10 BrowseBot</a> &middot; <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-11-langgraph-research-agent" target="_blank" rel="noopener">11 GraphScout</a> &middot; <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-12-langgraph-approval-flow" target="_blank" rel="noopener">12 GraphGate</a> &middot; <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-13-langgraph-map-reduce" target="_blank" rel="noopener">13 GraphSwarm</a></p>
         </div>
       </section>
 
@@ -222,13 +246,12 @@
             <div class="ti">React 19</div>
             <div class="ti">TypeScript 5.7</div>
             <div class="ti">Vite 6</div>
-            <div class="ti">Tailwind CSS v4</div>
-            <div class="ti">OpenRouter Free</div>
+            <div class="ti">Custom CSS design system</div>
+            <div class="ti">OpenRouter</div>
             <div class="ti">Netlify Functions v2</div>
-            <div class="ti">Supabase</div>
+            <div class="ti">LangGraph.js</div>
             <div class="ti">Deepgram STT</div>
-            <div class="ti">Browserbase</div>
-            <div class="ti">Playwright</div>
+                        <div class="ti">Playwright</div>
             <div class="ti">React Flow</div>
             <div class="ti">Recharts</div>
             <div class="ti">Framer Motion</div>
@@ -240,7 +263,7 @@
 
     <footer>
       <div class="ctn">
-        <p class="footer-name">Christopher Gentile / JDGAFX / CGDarkstardev1 / NewDawn AI</p>
+        <p class="footer-name">Christopher Gentile / JDGAFX / NewDawn AI</p>
         <p>Source on <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS">GitHub</a></p>
       </div>
     </footer>
