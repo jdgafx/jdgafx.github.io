@@ -1,271 +1,135 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Christopher Gentile — Full-Stack AI Engineer</title>
-    <meta name="description" content="13 AI applications built by Christopher Gentile. Multi-agent orchestration, RAG, vision AI, voice assistants, and more." />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2306090f'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%2310b981' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%2310b981'/%3E%3C/svg%3E" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-    <style>
-      *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-      :root{
-        --bg:#06090f;
-        --surface:#0d1117;
-        --raised:#161b22;
-        --border:rgba(255,255,255,.06);
-        --border-hover:rgba(255,255,255,.12);
-        --text:#e6edf3;
-        --dim:#8b949e;
-        --muted:#7d8791;
-        --accent:#10b981;
-        --accent-dim:rgba(16,185,129,.12);
-        --accent2:#14b8a6;
-        --accent3:#06b6d4;
-      }
-      body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
-      a{color:inherit;text-decoration:none}
-      .ctn{width:100%;max-width:1100px;min-width:0;margin:0 auto;padding:0 24px}
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Christopher Gentile — AI Engineer and Full-Stack Developer</title>
+<meta name="description" content="Christopher Gentile is an AI engineer and full-stack developer in New Hampshire, with thirteen deployed applications that each have a live demo and public source code.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Christopher Gentile — AI Engineer and Full-Stack Developer">
+<meta property="og:description" content="Christopher Gentile is an AI engineer and full-stack developer in New Hampshire, with thirteen deployed applications that each have a live demo and public source code.">
+<meta property="og:url" content="https://jdgafx.github.io/">
+<link rel="canonical" href="https://jdgafx.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23171b22'/%3E%3Cpath d='M9 9h14v3H13v8h10v3H9z' fill='%23f7f8fa'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{--paper:#f7f8fa;--ink:#171b22;--soft:#4a5262;--rule:#c9ced8;--wash:#eceff4;--link:#1747c4;--focus:#b4440e;
+--sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace}
+html{font-size:100%;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:1.125rem;line-height:1.65}
+a{color:var(--link);text-underline-offset:.2em;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+a:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:2px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:#fff;padding:.5rem;z-index:9}
+.bar{border-bottom:1px solid var(--rule)}
+.bar .wrap{display:flex;flex-wrap:wrap;gap:.25rem 1.75rem;align-items:baseline;padding-top:1rem;padding-bottom:1rem}
+.bar .me{font-family:var(--mono);font-size:.9375rem;font-weight:500;color:var(--ink);text-decoration:none;margin-right:auto}
+.bar a.nav{font-size:1rem;color:var(--ink)}
+.bar a.nav[aria-current=page]{font-weight:600;text-decoration-thickness:2px}
+.head{padding:4.5rem 0 3rem}
+h1{font-size:clamp(2.5rem,7vw,4.25rem);line-height:1.04;letter-spacing:-.025em;font-weight:600;margin:0 0 .6rem}
+.role{font-size:clamp(1.25rem,3vw,1.625rem);font-weight:400;color:var(--soft);margin:0 0 1.75rem}
+.lede{max-width:34rem;margin:0 0 1.75rem}
+.links{display:flex;flex-wrap:wrap;gap:.5rem 1.75rem;margin:0;padding:0;list-style:none}
+h2{font-size:1.5rem;line-height:1.25;font-weight:600;margin:0 0 1.25rem;letter-spacing:-.01em}
+section{border-top:1px solid var(--rule);padding:2.75rem 0}
+.cols{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:1rem 2rem}
+.cols>h2{margin:0}
+.prose{max-width:38rem}
+.prose p{margin:0 0 1rem}
+dl.facts{margin:0;max-width:44rem;display:grid;grid-template-columns:10rem minmax(0,1fr);gap:.75rem 1.5rem}
+dl.facts dt{font-weight:600}dl.facts dd{margin:0}
+.apps{list-style:none;margin:0;padding:0}
+.app{display:grid;grid-template-columns:7rem minmax(0,1fr);gap:.25rem 1.5rem;padding:1.5rem 0;border-top:1px solid var(--rule)}
+.app:first-child{border-top:0;padding-top:0}
+.dir{font-family:var(--mono);font-size:.875rem;color:var(--soft);padding-top:.45rem}
+.app h3{font-size:1.25rem;line-height:1.3;margin:0;font-weight:600}
+.app h3 span{font-weight:400;color:var(--soft);font-size:1rem;display:block}
+.app p{max-width:40rem;margin:.5rem 0 .6rem}
+.app .go{display:flex;gap:1.5rem;font-size:1rem;margin:0}
+.app .go a{font-weight:500}
+table.idx{width:100%;border-collapse:collapse;font-size:1rem}
+table.idx th{text-align:left;font-weight:600;padding:.5rem .75rem .5rem 0;border-bottom:2px solid var(--ink)}
+table.idx td{padding:.6rem .75rem .6rem 0;border-bottom:1px solid var(--rule);vertical-align:baseline}
+table.idx td.m,table.idx th.m{font-family:var(--mono);font-size:.875rem;color:var(--soft)}
+table.idx td.sub{color:var(--soft)}
+.foot{border-top:1px solid var(--rule);padding:2rem 0 3rem;font-size:1rem;color:var(--soft)}
+.foot p{margin:0 0 .35rem}
+.foot a{color:var(--link)}
+@media (max-width:46rem){
+ body{font-size:1.0625rem}.wrap{padding:0 1.125rem}
+ .head{padding:2.75rem 0 2rem}
+ .cols{grid-template-columns:1fr}
+ dl.facts{grid-template-columns:1fr;gap:.1rem}dl.facts dd{margin-bottom:.9rem}
+ .app{grid-template-columns:1fr}.dir{padding-top:0}
+ table.idx thead{display:none}
+ table.idx,table.idx tbody,table.idx tr,table.idx td{display:block}
+ table.idx tr{padding:.7rem 0;border-bottom:1px solid var(--rule)}
+ table.idx td{border:0;padding:.05rem 0}
+}
+@media (prefers-reduced-motion:no-preference){.head h1{animation:rise .5s ease-out both}@keyframes rise{from{opacity:0;transform:translateY(.4rem)}}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="wrap">
+<a class="me" href="https://jdgafx.github.io/">jdgafx</a>
+<a class="nav" href="https://jdgafx.github.io/" aria-current="page">Profile</a>
+<a class="nav" href="https://jdgafx.github.io/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/">Applications</a>
+<a class="nav" href="resume/Christopher_Gentile_Resume_NHEP.pdf">Resume</a>
+<a class="nav" href="https://github.com/jdgafx">GitHub</a>
+</div></header>
+<main id="main">
+<div class="head"><div class="wrap">
+<h1>Christopher Gentile</h1>
+<p class="role">AI Engineer and Full-Stack Developer</p>
+<p class="lede">Christopher Gentile is an AI engineer and full-stack developer in New Hampshire, with thirteen deployed applications that each have a live demo and public source code.</p>
+<ul class="links">
+<li><a href="https://jdgafx.github.io/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/">Thirteen applications, described</a></li>
+<li><a href="resume/Christopher_Gentile_Resume_NHEP.pdf">Resume (PDF)</a></li>
+<li><a href="https://github.com/jdgafx">GitHub profile</a></li>
+</ul>
+</div></div>
 
-      header{position:sticky;top:0;z-index:50;background:rgba(6,9,15,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-      header .ctn{display:flex;align-items:center;justify-content:space-between;height:56px}
-      .logo{font-size:18px;font-weight:700;letter-spacing:-.02em;color:#fff}
-      header nav{display:flex;gap:28px}
-      header nav a{color:var(--dim);font-size:14px;font-weight:500;transition:color .2s}
-      header nav a:hover{color:#fff}
-
-      .hero{padding:100px 0 60px;position:relative;overflow:hidden}
-      .hero::before{content:'';position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(16,185,129,.06),transparent 70%);pointer-events:none}
-      .hero-inner{max-width:640px}
-      .hero-tag{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border-radius:999px;font-size:12px;font-weight:500;font-family:'JetBrains Mono',monospace;background:var(--accent-dim);color:var(--accent);border:1px solid rgba(16,185,129,.2);margin-bottom:24px}
-      .hero-tag .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
-      @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-      .hero h1{font-size:clamp(32px,5vw,48px);font-weight:800;letter-spacing:-.04em;line-height:1.1;margin-bottom:8px;color:#fff}
-      .hero .name-sub{font-size:15px;color:var(--dim);font-weight:400;margin-bottom:20px}
-      .hero .name-sub span{color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:13px}
-      .hero p{font-size:16px;color:var(--dim);max-width:520px;line-height:1.7;margin-bottom:32px}
-      .hero-links{display:flex;gap:12px;flex-wrap:wrap}
-      .hero-links a{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:8px;font-size:13px;font-weight:600;transition:all .2s}
-      .btn-primary{background:var(--accent);color:#06231a}
-      .btn-primary:hover{background:#0d9668}
-      .btn-secondary{background:var(--raised);color:var(--text);border:1px solid var(--border)}
-      .btn-secondary:hover{border-color:var(--border-hover);background:#1c2128}
-
-      .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:32px}
-      .b{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:500;font-family:'JetBrains Mono',monospace;background:var(--raised);border:1px solid var(--border);color:var(--dim)}
-      .b .d{width:5px;height:5px;border-radius:50%}
-
-      .section{padding:60px 0}
-      .stitle{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:32px;display:flex;align-items:center;gap:16px}
-      .stitle::after{content:'';flex:1;height:1px;background:var(--border)}
-
-      .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;min-width:0}
-      .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;transition:all .25s ease;position:relative;overflow:hidden;display:block}
-      .card:hover{border-color:var(--border-hover);transform:translateY(-1px);box-shadow:0 12px 32px rgba(0,0,0,.25)}
-      .card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--ac);opacity:0;transition:opacity .25s}
-      .card:hover::before{opacity:1}
-      .ch{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-      .ci{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;background:color-mix(in srgb,var(--ac) 12%,transparent)}
-      .cn{font-size:11px;font-weight:600;font-family:'JetBrains Mono',monospace;color:var(--muted);padding:3px 8px;border-radius:4px;background:var(--raised)}
-      .cname{font-size:17px;font-weight:700;letter-spacing:-.02em;margin-bottom:3px;color:#fff}
-      .csub{font-size:12px;font-weight:500;color:var(--ac);margin-bottom:10px;opacity:.85}
-      .cdesc{font-size:13px;color:var(--dim);line-height:1.6;margin-bottom:14px}
-      .cf{display:flex;align-items:center;justify-content:space-between}
-      .tags{display:flex;gap:5px;flex-wrap:wrap}
-      .srcs{margin-top:24px;font-size:13px;line-height:2;color:var(--muted);overflow-wrap:anywhere}
-      .srcs a{color:var(--muted);text-decoration:underline}
-      .tag{font-size:10px;font-weight:500;font-family:'JetBrains Mono',monospace;padding:2px 7px;border-radius:4px;background:var(--raised);color:var(--muted)}
-      .arr{color:var(--muted);font-size:16px;transition:transform .2s,color .2s}
-      .card:hover .arr{transform:translateX(3px);color:var(--ac)}
-
-      .tg{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;min-width:0}
-      .ti{padding:14px 18px;background:var(--surface);border:1px solid var(--border);border-radius:8px;font-size:13px;font-weight:500;text-align:center;transition:border-color .2s;color:var(--dim)}
-      .ti:hover{border-color:var(--border-hover);color:var(--text)}
-
-      footer{padding:40px 0;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid var(--border)}
-      footer a{color:var(--accent);transition:color .2s}
-      footer a:hover{color:var(--accent2)}
-      .footer-name{color:var(--dim);margin-bottom:4px}
-
-      @media(max-width:640px){
-        header .ctn{padding:0 16px}
-        header nav{gap:14px}
-        header nav a{font-size:12px}
-        .logo{font-size:16px}
-        .grid{grid-template-columns:1fr}
-        .hero{padding:60px 0 40px}
-        .hero-links{flex-direction:column}
-        .hero-links a{justify-content:center}
-      }
-      @media(prefers-reduced-motion:reduce){
-        *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <div class="ctn">
-        <span class="logo">jdgafx</span>
-        <nav>
-          <a href="#apps">Apps</a>
-          <a href="#stack">Stack</a>
-          <a href="https://github.com/jdgafx">GitHub</a>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div class="ctn">
-          <div class="hero-inner">
-            <div class="hero-tag"><span class="dot"></span> 13 live AI applications</div>
-            <h1>Christopher Gentile</h1>
-            <div class="name-sub">Full-Stack AI Engineer <span>/ JDGAFX</span></div>
-            <p>I build AI systems &mdash; multi-agent orchestration, RAG pipelines, voice assistants, computer vision, and LangGraph agents and browser-task planning. Every app is deployed and runs on live public data.</p>
-            <div class="hero-links">
-              <a href="#apps" class="btn-primary">View Projects &darr;</a>
-              <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS" class="btn-secondary" target="_blank">Source Code &nearr;</a>
-            </div>
-            <div class="badges">
-              <span class="b"><span class="d" style="background:#10b981"></span>React 19</span>
-              <span class="b"><span class="d" style="background:#3b82f6"></span>TypeScript 5.7</span>
-              <span class="b"><span class="d" style="background:#14b8a6"></span>OpenRouter</span>
-              <span class="b"><span class="d" style="background:#06b6d4"></span>Netlify Functions</span>
-              <span class="b"><span class="d" style="background:#22c55e"></span>CSS design system</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="apps">
-        <div class="ctn">
-          <div class="stitle">AI Portfolio &mdash; 13 AI Applications</div>
-          <div class="grid">
-            <a href="https://jdgafx-app-01-multi-agent-orchestrator.netlify.app" class="card" style="--ac:#00d4ff" target="_blank" rel="noopener">
-              <div class="ch"><div class="ci" style="color:#00d4ff">&#9881;</div><span class="cn">01</span></div>
-              <div class="cname">AgentFlow</div>
-              <div class="csub">Multi-Agent Research Orchestrator</div>
-              <div class="cdesc">Answers a research question from live Wikipedia and Hacker News sources. Four model agents run in a fixed order, then an audit checks every cited sentence of the report against its source and marks it supported, partly supported or not supported.</div>
-              <div class="cf"><div class="tags"><span class="tag">Citation Audit</span><span class="tag">SSE</span><span class="tag">Multi-Agent</span></div><span class="arr">&rarr;</span></div>
-            </a>
-            <a href="https://jdgafx-app-02-rag-document-intelligence.netlify.app" class="card" style="--ac:#10b981" target="_blank" rel="noopener">
-              <div class="ch"><div class="ci" style="color:#10b981">&#128196;</div><span class="cn">02</span></div>
-              <div class="cname">DocMind</div>
-              <div class="csub">RAG Document Intelligence</div>
-              <div class="cdesc">Ask questions about a live Wikipedia article, an arXiv paper or your own PDF. The browser ranks passages with BM25, and each citation in the answer opens the passage with the supporting sentence highlighted.</div>
-              <div class="cf"><div class="tags"><span class="tag">BM25</span><span class="tag">RAG</span><span class="tag">Evidence</span></div><span class="arr">&rarr;</span></div>
-            </a>
-            <a href="https://jdgafx-app-03-ai-code-review.netlify.app" class="card" style="--ac:#f59e0b" target="_blank" rel="noopener">
-              <div class="ch"><div class="ci" style="color:#f59e0b">&#128269;</div><span class="cn">03</span></div>
-              <div class="cname">CodeLens AI</div>
-              <div class="csub">Verified Code Review</div>
-              <div class="cdesc">Paste code, load a file from public GitHub or paste a pull request link. A second model pass checks each review comment against the code and keeps, moves or drops it, with a reason that quotes the code.</div>
-              <div class="cf"><div class="tags"><span class="tag">Verified Review</span><span class="tag">PR Review</span><span class="tag">GitHub</span></div><span class="arr">&rarr;</span></div>
-            </a>
-            <a href="https://jdgafx-app-04-voice-ai-assistant.netlify.app" class="card" style="--ac:#8b5cf6" target="_blank" rel="noopener">
-              <div class="ch"><div class="ci" style="color:#8b5cf6">&#127908;</div><span class="cn">04</span></div>
-              <div class="cname">VoxAI</div>
-              <div class="csub">Streaming Voice Assistant</div>
-              <div class="cdesc">Ask by voice or by typing. The reply streams in and the browser starts speaking at the first sentence, with the time to first audio measured and shown. Live weather (Open-Meteo) and Wikipedia lookups feed the answers.</div>
-              <div class="cf"><div class="tags"><span class="tag">Streaming</span><span class="tag">Deepgram</span><span class="tag">Time to First Audio</span></div><span class="arr">&rarr;</span></div>
-            </a>
-            <a href="https://jdgafx-app-05-ai-data-analyst.netlify.app" class="card" style="--ac:#ef4444" target="_blank" rel="noopener">
-              <div class="ch"><div class="ci" style="color:#ef4444">&#128200;</div><span class="cn">05</span></div>
-              <div class="cname">DataPilot</div>
-              <div class="csub">AI Data Analyst</div>
-              <div class="cdesc">Ask a plain-English question about a live public dataset (USGS, Open-Meteo) or your own CSV, then follow up to refine it. The model writes a query plan and your browser runs it over every row to draw the chart.</div>
-              <div class="cf"><div class="tags"><span class="tag">Query Plans</span><span class="tag">CSV</span><span class="tag">Follow-ups</span></div><span class="arr">&rarr;</span></div>
-            </a>
-            <a href="https://jdgafx-app-06-llm-playground.netlify.app" class="card" style="--ac:#3b82f6" target="_blank" rel="noopener">
-              <div class="ch"><div class="ci" style="color:#3b82f6">&#9878;</div><span class="cn">06</span></div>
-              <div class="cname">ModelArena</div>
-              <div class="csub">Blind Model Arena</div>
-              <div class="cdesc">Send one prompt to three models, read the answers without names, then vote. A shared Elo leaderboard fills only from real votes. Latency, tokens and cost are measured, and an AI judge&rsquo;s note is labelled as opinion.</div>
-              <div class="cf"><div class="tags"><span class="tag">Blind Arena</span><span class="tag">Leaderboard</span><span class="tag">OpenRouter</span></div><span class="arr">&rarr;</span></div>
-            </a>
-            <a href="https://jdgafx-app-07-content-pipeline.netlify.app" class="card" style="--ac:#84cc16" target="_blank" rel="noopener">
-              <div class="ch"><div class="ci" style="color:#84cc16">&#9999;</div><span class="cn">07</span></div>
-              <div class="cname">ContentForge</div>
-              <div class="csub">Agentic Content Pipeline</div>
-              <div class="cdesc">Turns a topic into a cited piece, grounded in live Wikipedia and Hacker News sources, through five writing steps. Changes between Draft, Edit and Polish are shown word by word, explained, and checked against the text.</div>
-              <div class="cf"><div class="tags"><span class="tag">Tracked Changes</span><span class="tag">Pipeline</span><span class="tag">SSE</span></div><span class="arr">&rarr;</span></div>
-            </a>
-            <a href="https://jdgafx-app-08-vision-ai.netlify.app" class="card" style="--ac:#f43f5e" target="_blank" rel="noopener">
-              <div class="ch"><div class="ci" style="color:#f43f5e">&#128065;</div><span class="cn">08</span></div>
-              <div class="cname">VisionLab</div>
-              <div class="csub">Multimodal Vision AI</div>
-              <div class="cdesc">Ask about a whole picture, about a box you draw on it, or about two pictures side by side. Pick an image from Wikimedia Commons or upload your own; a region question sends the crop at full resolution.</div>
-              <div class="cf"><div class="tags"><span class="tag">Region Questions</span><span class="tag">Compare</span><span class="tag">Vision</span></div><span class="arr">&rarr;</span></div>
-            </a>
-            <a href="https://jdgafx-app-09-ai-saas.netlify.app" class="card" style="--ac:#6366f1" target="_blank" rel="noopener">
-              <div class="ch"><div class="ci" style="color:#6366f1">&#128202;</div><span class="cn">09</span></div>
-              <div class="cname">InsightHub</div>
-              <div class="csub">npm Download Analytics</div>
-              <div class="cdesc">Loads live npm download counts for one to five packages and marks the unusual days. Each spike is matched to the package&rsquo;s release history, and a streamed explanation has every number, date and version checked against that evidence.</div>
-              <div class="cf"><div class="tags"><span class="tag">npm Registry</span><span class="tag">Spikes</span><span class="tag">Checked Figures</span></div><span class="arr">&rarr;</span></div>
-            </a>
-            <a href="https://jdgafx-app-10-browser-agent.netlify.app" class="card" style="--ac:#14b8a6" target="_blank" rel="noopener">
-              <div class="ch"><div class="ci" style="color:#14b8a6">&#129302;</div><span class="cn">10</span></div>
-              <div class="cname">BrowseBot</div>
-              <div class="csub">Browser Agent with Visual Replay</div>
-              <div class="cdesc">Describe a web task and a model plans the steps. They run in headless Chromium on allowlisted public sites, and a filmstrip replays the real page at each step with the URL, title and text the browser read.</div>
-              <div class="cf"><div class="tags"><span class="tag">Headless Chromium</span><span class="tag">Playwright</span><span class="tag">Replay</span></div><span class="arr">&rarr;</span></div>
-            </a>
-            <a href="https://jdgafx-app-11-langgraph-research-agent.netlify.app" class="card" style="--ac:#fbbf24" target="_blank" rel="noopener">
-              <div class="ch"><div class="ci" style="color:#fbbf24">&#8634;</div><span class="cn">11</span></div>
-              <div class="cname">GraphScout</div>
-              <div class="csub">LangGraph Research Agent</div>
-              <div class="cdesc">Answers a factual question from Wikipedia with an agent loop, a draft and a critic, and lists its cited sources. You can rewind to the plan or the critic, edit it, and resume the run from that checkpoint.</div>
-              <div class="cf"><div class="tags"><span class="tag">LangGraph</span><span class="tag">Rewind</span><span class="tag">Checkpoints</span></div><span class="arr">&rarr;</span></div>
-            </a>
-            <a href="https://jdgafx-app-12-langgraph-approval-flow.netlify.app" class="card" style="--ac:#38bdf8" target="_blank" rel="noopener">
-              <div class="ch"><div class="ci" style="color:#38bdf8">&#9989;</div><span class="cn">12</span></div>
-              <div class="cname">GraphGate</div>
-              <div class="csub">GitHub Issue Triage with Approval</div>
-              <div class="cdesc">Triages live public GitHub issues. It looks for earlier duplicates and quotes the evidence, then proposes labels, a priority and a reply or &ldquo;close as duplicate&rdquo;, and waits for a human to approve, edit or reject. Nothing is posted to GitHub.</div>
-              <div class="cf"><div class="tags"><span class="tag">LangGraph</span><span class="tag">Duplicates</span><span class="tag">Human Approval</span></div><span class="arr">&rarr;</span></div>
-            </a>
-            <a href="https://jdgafx-app-13-langgraph-map-reduce.netlify.app" class="card" style="--ac:#f472b6" target="_blank" rel="noopener">
-              <div class="ch"><div class="ci" style="color:#f472b6">&#128506;</div><span class="cn">13</span></div>
-              <div class="cname">GraphSwarm</div>
-              <div class="csub">LangGraph Map-Reduce</div>
-              <div class="cdesc">Splits a Wikipedia article or pasted text into chunks, extracts points from each in parallel and writes a summary that cites its chunks. A coverage map shows which chunks the summary uses, and missed chunks are re-run once.</div>
-              <div class="cf"><div class="tags"><span class="tag">Map-Reduce</span><span class="tag">Coverage Map</span><span class="tag">LangGraph</span></div><span class="arr">&rarr;</span></div>
-            </a>
-          </div>
-          <p class="srcs">Source code: <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-01-multi-agent-orchestrator" target="_blank" rel="noopener">01 AgentFlow</a> &middot; <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-02-rag-document-intelligence" target="_blank" rel="noopener">02 DocMind</a> &middot; <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-03-ai-code-review" target="_blank" rel="noopener">03 CodeLens AI</a> &middot; <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-04-voice-ai-assistant" target="_blank" rel="noopener">04 VoxAI</a> &middot; <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-05-ai-data-analyst" target="_blank" rel="noopener">05 DataPilot</a> &middot; <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-06-llm-playground" target="_blank" rel="noopener">06 ModelArena</a> &middot; <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-07-content-pipeline" target="_blank" rel="noopener">07 ContentForge</a> &middot; <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-08-vision-ai" target="_blank" rel="noopener">08 VisionLab</a> &middot; <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-09-ai-saas" target="_blank" rel="noopener">09 InsightHub</a> &middot; <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-10-browser-agent" target="_blank" rel="noopener">10 BrowseBot</a> &middot; <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-11-langgraph-research-agent" target="_blank" rel="noopener">11 GraphScout</a> &middot; <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-12-langgraph-approval-flow" target="_blank" rel="noopener">12 GraphGate</a> &middot; <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-13-langgraph-map-reduce" target="_blank" rel="noopener">13 GraphSwarm</a></p>
-        </div>
-      </section>
-
-      <section class="section" id="stack">
-        <div class="ctn">
-          <div class="stitle">Tech Stack</div>
-          <div class="tg">
-            <div class="ti">React 19</div>
-            <div class="ti">TypeScript 5.7</div>
-            <div class="ti">Vite 6</div>
-            <div class="ti">Custom CSS design system</div>
-            <div class="ti">OpenRouter</div>
-            <div class="ti">Netlify Functions v2</div>
-            <div class="ti">LangGraph.js</div>
-            <div class="ti">Deepgram STT</div>
-                        <div class="ti">Playwright</div>
-            <div class="ti">React Flow</div>
-            <div class="ti">Recharts</div>
-            <div class="ti">Framer Motion</div>
-            <div class="ti">Web Audio API</div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="ctn">
-        <p class="footer-name">Christopher Gentile / JDGAFX / NewDawn AI</p>
-        <p>Source on <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS">GitHub</a></p>
-      </div>
-    </footer>
-  </body>
+<section><div class="wrap cols"><h2>Background</h2><div class="prose">
+<p>Independent AI engineer and full-stack developer, working remotely from New Hampshire since October 2025. Before that, 17 years in enterprise technology sales covering networking infrastructure, cybersecurity and cloud.</p>
+<p>Client work since January 2026 includes a rebuild of PrimeMarketingExperts.com in Next.js 16, TypeScript and Tailwind CSS. Other projects listed on the resume are a job-application pipeline (Python, Playwright, Claude API, Supabase) and an algorithmic trading platform (Node.js, Next.js, PostgreSQL).</p>
+<p>Anthropic Academy course certificates from April 2026 cover the Claude API, Claude Code, agent skills, subagents and the Model Context Protocol.</p>
+</div></div></section>
+<section><div class="wrap cols"><h2>Tools</h2>
+<dl class="facts">
+<dt>Languages</dt><dd>Python, TypeScript, JavaScript, Bash, SQL</dd>
+<dt>Front end</dt><dd>React 19, Next.js, Vite, Tailwind CSS</dd>
+<dt>AI</dt><dd>Anthropic Claude (Code, API, Agent SDK), OpenRouter, LangGraph.js, retrieval-augmented generation, multi-agent orchestration</dd>
+<dt>Automation</dt><dd>Playwright, n8n, MCP</dd>
+<dt>Hosting and data</dt><dd>Netlify, Cloudflare, Supabase, PostgreSQL</dd>
+</dl></div></section>
+<section><div class="wrap"><h2>Applications</h2>
+<p class="prose" style="margin-bottom:1.5rem">The thirteen applications live in one repository, <a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS">JDGAFX_CG_GITHUB_PORTFOLIO_APPS</a>. Each is deployed on Netlify. <a href="https://jdgafx.github.io/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/">The applications page</a> describes what each one does.</p>
+<table class="idx"><thead><tr><th class="m">Directory</th><th>Name</th><th>Kind</th><th>Live</th><th>Code</th></tr></thead><tbody>
+<tr><td class="m">app-01</td><td><strong>AgentFlow</strong></td><td class="sub">Multi-Agent Research Orchestrator</td><td><a href="https://jdgafx-app-01-multi-agent-orchestrator.netlify.app">Live demo</a></td><td><a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-01-multi-agent-orchestrator">Source</a></td></tr>
+<tr><td class="m">app-02</td><td><strong>DocMind</strong></td><td class="sub">RAG Document Intelligence</td><td><a href="https://jdgafx-app-02-rag-document-intelligence.netlify.app">Live demo</a></td><td><a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-02-rag-document-intelligence">Source</a></td></tr>
+<tr><td class="m">app-03</td><td><strong>CodeLens AI</strong></td><td class="sub">Verified Code Review</td><td><a href="https://jdgafx-app-03-ai-code-review.netlify.app">Live demo</a></td><td><a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-03-ai-code-review">Source</a></td></tr>
+<tr><td class="m">app-04</td><td><strong>VoxAI</strong></td><td class="sub">Streaming Voice Assistant</td><td><a href="https://jdgafx-app-04-voice-ai-assistant.netlify.app">Live demo</a></td><td><a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-04-voice-ai-assistant">Source</a></td></tr>
+<tr><td class="m">app-05</td><td><strong>DataPilot</strong></td><td class="sub">AI Data Analyst</td><td><a href="https://jdgafx-app-05-ai-data-analyst.netlify.app">Live demo</a></td><td><a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-05-ai-data-analyst">Source</a></td></tr>
+<tr><td class="m">app-06</td><td><strong>ModelArena</strong></td><td class="sub">Blind Model Arena</td><td><a href="https://jdgafx-app-06-llm-playground.netlify.app">Live demo</a></td><td><a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-06-llm-playground">Source</a></td></tr>
+<tr><td class="m">app-07</td><td><strong>ContentForge</strong></td><td class="sub">Agentic Content Pipeline</td><td><a href="https://jdgafx-app-07-content-pipeline.netlify.app">Live demo</a></td><td><a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-07-content-pipeline">Source</a></td></tr>
+<tr><td class="m">app-08</td><td><strong>VisionLab</strong></td><td class="sub">Multimodal Vision AI</td><td><a href="https://jdgafx-app-08-vision-ai.netlify.app">Live demo</a></td><td><a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-08-vision-ai">Source</a></td></tr>
+<tr><td class="m">app-09</td><td><strong>InsightHub</strong></td><td class="sub">npm Download Analytics</td><td><a href="https://jdgafx-app-09-ai-saas.netlify.app">Live demo</a></td><td><a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-09-ai-saas">Source</a></td></tr>
+<tr><td class="m">app-10</td><td><strong>BrowseBot</strong></td><td class="sub">Browser Agent with Visual Replay</td><td><a href="https://jdgafx-app-10-browser-agent.netlify.app">Live demo</a></td><td><a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-10-browser-agent">Source</a></td></tr>
+<tr><td class="m">app-11</td><td><strong>GraphScout</strong></td><td class="sub">LangGraph Research Agent</td><td><a href="https://jdgafx-app-11-langgraph-research-agent.netlify.app">Live demo</a></td><td><a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-11-langgraph-research-agent">Source</a></td></tr>
+<tr><td class="m">app-12</td><td><strong>GraphGate</strong></td><td class="sub">GitHub Issue Triage with Approval</td><td><a href="https://jdgafx-app-12-langgraph-approval-flow.netlify.app">Live demo</a></td><td><a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-12-langgraph-approval-flow">Source</a></td></tr>
+<tr><td class="m">app-13</td><td><strong>GraphSwarm</strong></td><td class="sub">LangGraph Map-Reduce</td><td><a href="https://jdgafx-app-13-langgraph-map-reduce.netlify.app">Live demo</a></td><td><a href="https://github.com/jdgafx/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/tree/main/app-13-langgraph-map-reduce">Source</a></td></tr>
+</tbody></table>
+</div></section>
+</main>
+<footer class="foot"><div class="wrap">
+<p>Christopher Gentile, New Hampshire.</p>
+<p><a href="https://jdgafx.github.io/">Profile</a>, <a href="https://jdgafx.github.io/JDGAFX_CG_GITHUB_PORTFOLIO_APPS/">applications</a>, <a href="resume/Christopher_Gentile_Resume_NHEP.pdf">resume</a>, <a href="https://github.com/jdgafx">GitHub</a>.</p>
+</div></footer>
+</body>
 </html>
